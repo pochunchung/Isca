@@ -52,6 +52,12 @@ Python scripts are also used to run the model on different architectures, to
 archive the output, and for diagnostics, graphics, and post-processing. All of
 these features are publicly available on a Git-based repository.
 
+### Isca coupled to a thermodynamic sea ice model
+
+This repository includes the code accompanying the paper: Chung, P. C., & Feldl, N. (2023). Sea Ice Loss, Water Vapor Increases, and Their Interactions with Atmospheric Energy Transport in Driving Seasonal Polar Amplification. Journal of Climate, 1-28. https://doi.org/10.1175/JCLI-D-23-0219.1
+
+The editions of thermodynamical sea ice are included in *mixed_layer.F90* and *idealized_moist_phys.F90* under *Isca/src/atmos_spectral/driver/solo*. We set up the logical input name list (do_prescribe_albedo and do_thermodynamic_albedo) to switch the default Isca setting and sea ice thermodynamics. All model setting in Chung & Feldl 2023 can be found in python files under *Isca/exp/exp_ThermoIce_Chung*
+
 ## Getting Started
 
 A python module `isca` (note lowercase) is provided alongside the Fortran source code that should help to do a lot of the heavy-lifting of compiling, configuring and running the model for you.  Isca can be compiled, run and configured without using python, but using the python wrapper is recommended.
